@@ -111,7 +111,7 @@ class HomeController extends Controller
         Mail::send([], [], function ($message) use ($request, $filePath, $resumeName, $to) {
 
             $message->to($to)
-                ->from('sales@intellectaqua.com', 'Intellect Aqua')
+                ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
                 ->replyTo($request->email, $request->name)
                 ->subject('New Job Application')
                 ->text(
@@ -134,14 +134,13 @@ class HomeController extends Controller
         Mail::send([], [], function ($message) use ($request) {
 
             $message->to($request->email)
-                ->from('sales@intellectaqua.com', 'Intellect Aqua')
+                ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
                 ->subject('Thank You for Your Enquiry')
                 ->html("
                 <p>Hi {$request->name},</p>
                 <p>Thank you for your application. We have received your submission and our team will review it and get back to you soon.</p>
                 <br>
                 <p><strong>Your Message:</strong></p>
-                <p>{$request->subject}</p>
                 <p>{$request->message}</p>
             ");
         });
@@ -220,12 +219,12 @@ class HomeController extends Controller
         );
 
         try {
-            $to = "kavinwebbitech@gmail.com";
+            $to = "venkadavanprojectschennai@gmail.com";
 
             Mail::send([], [], function ($message) use ($validated, $request, $to) {
 
                 $message->to($to)
-                    ->from('sales@intellectaqua.com', 'Intellect Aqua')
+                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
                     ->replyTo($validated['email'], $validated['name'])
                     ->subject('New Enquiry Received')
                     ->html("
@@ -241,7 +240,7 @@ class HomeController extends Controller
             Mail::send([], [], function ($message) use ($validated) {
 
                 $message->to($validated['email'])
-                    ->from('sales@intellectaqua.com', 'Intellect Aqua')
+                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
                     ->subject('Thank You for Your Enquiry')
                     ->html("
                     <p>Hi {$validated['name']},</p>
@@ -298,12 +297,12 @@ class HomeController extends Controller
         );
 
         try {
-            $to = "kavinwebbitech@gmail.com";
+            $to = "venkadavanprojectschennai@gmail.com";
 
             Mail::send([], [], function ($message) use ($validated, $request, $to) {
 
                 $message->to($to)
-                    ->from('sales@intellectaqua.com', 'Intellect Aqua')
+                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
                     ->replyTo($validated['email'], $validated['name'])
                     ->subject('New Enquiry Received')
                     ->html("
@@ -319,7 +318,7 @@ class HomeController extends Controller
             Mail::send([], [], function ($message) use ($validated) {
 
                 $message->to($validated['email'])
-                    ->from('sales@intellectaqua.com', 'Intellect Aqua')
+                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
                     ->subject('Thank You for Your Enquiry')
                     ->html("
                     <p>Hi {$validated['name']},</p>
