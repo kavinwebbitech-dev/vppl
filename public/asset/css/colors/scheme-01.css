@@ -1,0 +1,36 @@
+* {
+  /* PRIMARY – Water / Technology Blue */
+  /* --primary-color: #137DB0; */
+  --primary-color: #0ea5e9;
+  --primary-color-rgb: 0, 53, 97;
+  /* SECONDARY – Environmental Green (balances blue) */
+  --secondary-color: #000;
+  --secondary-color-rgb: 78, 124, 89;
+
+  /* BACKGROUND – Clean, airy */
+  --background: #F6FAFC;
+
+  /* TEXT COLORS */
+  --title-font-color: #1F3A4A;
+  /* Strong blue-grey for headings */
+  --body-font-color: #4B5F6B;
+  /* Soft readable body text */
+  --dark-body-font-color: rgba(255, 255, 255, 0.85);
+
+  /* SECTION BACKGROUNDS */
+  --bg-color-even: #EDF3F7;
+  --bg-color-odd: #F8FBFD;
+
+  /* DARK SECTIONS */
+  --bg-dark-1: #0ea5e9;
+  /* Deep engineering blue */
+  --bg-dark-1-rgb: 15, 78, 110;
+
+  --bg-dark-2: #0C3E57;
+  --bg-dark-3: #134B63;
+  --bg-dark-3-rgb: 19, 75, 99;
+
+  /* GREY / LIGHT */
+  --bg-grey: #EEF2F5;
+  --bg-light: #E6F1F6;
+}
