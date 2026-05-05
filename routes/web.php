@@ -1,24 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use League\CommonMark\Environment\Environment;
-use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\EnquiryController;
-use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\LandingPageController;
 use App\Http\Controllers\Admin\NotificationController;
-use App\Http\Controllers\Admin\PlanController;
-use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\SitemapRobotsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\JobController;
-use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
@@ -152,24 +144,11 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
         Route::put('/{id}/update', 'update')->name('update');
         Route::delete('/{id}', 'destroy')->name('delete');
     });
-    Route::get('careers', [CareerController::class, 'index'])->name('careers.index');
-    Route::get('careers/create', [CareerController::class, 'create'])->name('careers.create');
-    Route::post('careers/store', [CareerController::class, 'store'])->name('careers.store');
-    Route::get('careers/edit/{id}', [CareerController::class, 'edit'])->name('careers.edit');
-    Route::put('careers/update/{id}', [CareerController::class, 'update'])->name('careers.update');
-    Route::delete('careers/delete/{id}', [CareerController::class, 'destroy'])->name('careers.destroy');
-
+    
     Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
     Route::post('/jobs/{id}', [JobController::class, 'destroy'])->name('jobs.destroy');
 
-    Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial.index');
-    Route::get('/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
-    Route::post('/testimonial/store', [TestimonialController::class, 'store'])->name('testimonial.store');
-    Route::get('/testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial.edit');
-    Route::post('/testimonial/update/{id}', [TestimonialController::class, 'update'])->name('testimonial.update');
-    Route::delete('/testimonial/delete/{id}', [TestimonialController::class, 'delete'])->name('testimonial.delete');
-
-    Route::prefix('settings')->name('setting.')->controller(SettingController::class)->group(function () {
+    Route::prefix('profile')->name('setting.')->controller(SettingController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::post('/profile', 'updateProfile')->name('profile.update');
         Route::post('/common', 'updateCommon')->name('settings.update');
@@ -204,42 +183,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     });
 
     // Blogs
-    Route::prefix('blog')->name('blog.')->controller(BlogController::class)->group(function () {
-        Route::get('/list', 'index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/store', 'store')->name('store');
-        Route::get('/edit/{id}', 'edit')->name('edit');
-        Route::put('/update/{id}', 'update')->name('update');
-        Route::delete('/delete/{id}', 'destroy')->name('destory');
-    });
-
-    // Review
-    Route::prefix('review')->name('review.')->controller(ReviewController::class)->group(function () {
-        Route::get('/list', 'index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/store', 'store')->name('store');
-        Route::get('/edit/{id}', 'edit')->name('edit');
-        Route::put('/update/{id}', 'update')->name('update');
-        Route::delete('/delete/{id}', 'destroy')->name('destory');
-    });
-
-    // Plan
-    Route::prefix('plan')->name('plan.')->controller(PlanController::class)->group(function () {
-        Route::get('/list', 'index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/store', 'store')->name('store');
-        Route::get('/edit/{id}', 'edit')->name('edit');
-        Route::put('/update/{id}', 'update')->name('update');
-        Route::delete('/delete/{id}', 'destroy')->name('destory');
-    });
-
-
-    Route::prefix('faq')->name('faq.')->controller(FaqController::class)->group(function () {
-        Route::get('/list', 'index')->name('index');
-        Route::get('/edit', 'edit')->name('edit');
-        Route::put('/update', 'update')->name('update');
-        Route::post('/delete/{id}', 'destroy')->name('destory');
-    });
+    
 
     // Notification
     Route::prefix('notification')->name('notification.')->controller(NotificationController::class)->group(function () {

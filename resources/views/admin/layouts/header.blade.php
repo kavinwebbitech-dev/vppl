@@ -73,11 +73,11 @@
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a class="dropdown-item" href="{{ route('setting.index') }}">
                         <i class="fa fa-gear me-2"></i> Settings
                     </a>
-                </li>
+                </li> --}}
 
                 <li><hr class="dropdown-divider"></li>
 
