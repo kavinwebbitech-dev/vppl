@@ -3,7 +3,7 @@
         <div class="vppl-nav-flex">
 
             <div class="vppl-logo-wrap">
-                <a href="index.php">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('asset/images/vppl.svg') }}" alt="VPPL Logo">
                 </a>
             </div>
@@ -42,13 +42,13 @@
 
                     <li class="vppl-mobile-footer d-lg-none">
                         <span class="d-block mb-2" style="color: #64748b; font-size: 14px;">Have questions?</span>
-                        <a href="tel:+919843514600" class="mobile-cta-btn">Get a Quote</a>
+                        <a href="{{ route('contact') }}" class="mobile-cta-btn">Get a Quote</a>
                     </li>
                 </ul>
             </nav>
 
             <div class="d-flex align-items-center">
-                <a href="tel:+919843514600" class="vppl-contact-pill d-none d-xl-flex">
+                <a href="{{ route('contact') }}" class="vppl-contact-pill d-none d-xl-flex">
                     <i class="fas fa-phone-alt"></i>
                     <div class="vppl-contact-num ms-2">
                         <span>Get a Quote</span>

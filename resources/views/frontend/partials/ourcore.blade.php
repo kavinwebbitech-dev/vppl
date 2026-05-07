@@ -1,5 +1,3 @@
-
-
 <div class="main-bg">
     <div class="wave-bg-container">
         <svg class="wave-svg" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
@@ -24,12 +22,10 @@
                                 Grade</span>
                         </div>
                         <div class="liquid-frame frame-sub" id="blob-sub">
-                            <img src="{{ asset('asset/images/banner/water1.jp') }}g"
-                                alt="Tech">
+                            <img src="{{ asset('asset/images/banner/water1.jp') }}g" alt="Tech">
                         </div>
                         <div class="liquid-frame frame-main" id="blob-main">
-                            <img src="{{ asset('asset/images/banner/water2.jpg') }}"
-                                alt="Water Engineering">
+                            <img src="{{ asset('asset/images/banner/water2.jpg') }}" alt="Water Engineering">
                         </div>
                     </div>
                 </div>
@@ -77,9 +73,23 @@
 <script>
     // Animations kept exactly as original
     window.addEventListener('load', () => {
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-        tl.from(".reveal-item", { y: 100, opacity: 0, duration: 1.2, stagger: 0.15 })
-            .from(".liquid-frame", { scale: 0.8, opacity: 0, duration: 1.5, stagger: 0.2 }, "-=1");
+        const tl = gsap.timeline({
+            defaults: {
+                ease: "power4.out"
+            }
+        });
+        tl.from(".reveal-item", {
+                y: 100,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.15
+            })
+            .from(".liquid-frame", {
+                scale: 0.8,
+                opacity: 0,
+                duration: 1.5,
+                stagger: 0.2
+            }, "-=1");
     });
 
     function createMorph(element) {
@@ -94,47 +104,65 @@
     createMorph("#blob-main");
     createMorph("#blob-sub");
 
-    const canvas = document.getElementById('cursor-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
-    window.addEventListener('resize', resize); resize();
+    const particleCanvas = document.getElementById('cursor-canvas');
 
-    class Particle {
-        constructor(x, y) {
-            this.x = x; this.y = y;
-            this.size = Math.random() * 5 + 2;
-            this.alpha = 1;
-            this.vX = (Math.random() - 0.5) * 1;
-            this.vY = (Math.random() - 0.5) * 1;
+    if (particleCanvas) {
+
+        const ctx = particleCanvas.getContext('2d');
+        let particles = [];
+
+        const resize = () => {
+            particleCanvas.width = window.innerWidth;
+            particleCanvas.height = window.innerHeight;
+        };
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 2;
+                this.alpha = 1;
+                this.vX = (Math.random() - 0.5) * 1;
+                this.vY = (Math.random() - 0.5) * 1;
+            }
+
+            update() {
+                this.x += this.vX;
+                this.y += this.vY;
+                this.alpha -= 0.01;
+            }
+
+            draw() {
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = '#0ea5e9';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
-        update() { this.x += this.vX; this.y += this.vY; this.alpha -= 0.01; }
-        draw() {
-            ctx.globalAlpha = this.alpha;
-            ctx.fillStyle = '#0ea5e9';
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+
+        window.addEventListener('mousemove', (e) => {
+            for (let i = 0; i < 2; i++) {
+                particles.push(new Particle(e.clientX, e.clientY));
+            }
+        });
+
+        function anim() {
+            ctx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+
+            particles = particles.filter(p => p.alpha > 0);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(anim);
         }
+
+        anim();
     }
-
-    window.addEventListener('mousemove', (e) => {
-        for (let i = 0; i < 2; i++) particles.push(new Particle(e.clientX, e.clientY));
-    });
-
-    function anim() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles = particles.filter(p => p.alpha > 0);
-        particles.forEach(p => { p.update(); p.draw(); });
-        requestAnimationFrame(anim);
-    }
-    anim();
-
-    document.addEventListener('mousemove', (e) => {
-        if (window.innerWidth > 991) { // Only parallax on desktop
-            const x = (e.clientX / window.innerWidth - 0.5) * 40;
-            const y = (e.clientY / window.innerHeight - 0.5) * 40;
-            gsap.to("#blob-main", { x: x * 0.5, y: y * 0.5, duration: 1 });
-            gsap.to("#blob-sub", { x: -x * 0.3, y: -y * 0.3, duration: 1.5 });
-            gsap.to("#float-pill", { x: x * 0.8, y: y * 0.8, duration: 2 });
-        }
-    });
 </script>

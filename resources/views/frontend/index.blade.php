@@ -91,7 +91,7 @@
                 <div class="overflow-hidden position-relative">
                     <div class="aq2-clients__track">
                         <?php
-                        $clients = range(1, 39);
+                        $clients = range(1, 38);
                         $skip = [10];
                         foreach (array_merge($clients, $clients) as $i):
                             if (in_array($i, $skip))

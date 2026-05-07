@@ -94,7 +94,7 @@
         .service-nav-card {
             background: var(--vppl-light-bg);
             border-radius: 20px;
-            padding: 20px;
+            padding: 15px;
             border: 1px solid #e2e8f0;
             position: sticky;
             top: 110px;

@@ -315,7 +315,7 @@
                 <div class="vppl-container">
                     <div class="vppl-hero-content">
                         <ul class="vppl-breadcrumb">
-                            <li><a href="index.php">Home</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
                             <li class="active">News & Events</li>
                         </ul>
                         <h1 class="vppl-hero-title">Global <span class='vppl-gradient-text'>Updates</span> & Insights</h1>
@@ -336,7 +336,7 @@
                                 Discharge (ZLD) Systems</h2>
                             <p>Implementation of 95% process water recovery systems across major industrial hubs, reducing
                                 environmental footprint and operational costs.</p>
-                            <a href="news-details.php" class="btn-link" style="margin-top: 20px;">Read Case Study →</a>
+                            <a href="{{ route('news-details') }}" class="btn-link" style="margin-top: 20px;">Read Case Study →</a>
                         </div>
                     </div>
 
@@ -351,7 +351,7 @@
                                 <span class="vppl-tag">Event</span>
                                 <h3>ChemTech Global Expo 2026</h3>
                                 <p>Join VPPL as we unveil our latest ultra-filtration technology lineup.</p>
-                                <a href="javascript:void(0);" class="btn-link">Details →</a>
+                                <a href="{{ route('news-details') }}" class="btn-link">Details →</a>
                             </div>
                         </div>
 
@@ -364,7 +364,7 @@
                                 <span class="vppl-tag">Award</span>
                                 <h3>Excellence in Innovation</h3>
                                 <p>Recognized for breakthrough in ceramic membrane technology cycles.</p>
-                                <a href="javascript:void(0);" class="btn-link">Read More →</a>
+                                <a href="{{ route('news-details') }}" class="btn-link">Read More →</a>
                             </div>
                         </div>
 
@@ -377,7 +377,7 @@
                                 <span class="vppl-tag">Project</span>
                                 <h3>Ahmedabad Textile Hub</h3>
                                 <p>Commissioning of a smart-water recovery system for high-volume units.</p>
-                                <a href="javascript:void(0);" class="btn-link">Technical →</a>
+                                <a href="{{ route('news-details') }}" class="btn-link">Technical →</a>
                             </div>
                         </div>
 

@@ -217,7 +217,7 @@
             <div class="container relative z-index-1000">
                 <div class="vppl-hero-content">
                     <ul class="vppl-breadcrumb">
-                        <li><a href="index.php">Home</a></li>
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li class="active">Contact Us</li>
                     </ul>
                     <h1 class="vppl-hero-title">Get In <span class='vppl-gradient-text'>Touch</span> With Us</h1>

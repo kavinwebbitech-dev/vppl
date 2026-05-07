@@ -176,27 +176,24 @@
         }
     </style>
     <div id="wrapper">
-
-
-        <main id="content">
-            <section class="vppl-hero" style="background-image: url('{{ asset('asset/images/sub-banner.webp') }}');">
-                <div class="vppl-hero-overlay"></div>
-                <div class="container position-relative" style="z-index: 10;">
-                    <div class="vppl-hero-content">
-                        <ul class="vppl-breadcrumb">
-                            <li><a href="{{ route('home') }}">Home</a></li>
-                            <li class="active">Visual Gallery</li>
-                        </ul>
-                        <h1 class="vppl-hero-title">Our Projects <span class='vppl-gradient-text'>In Action</span></h1>
-                    </div>
+        <section class="vppl-hero" style="background-image: url('{{ asset('asset/images/sub-banner.webp') }}');">
+            <div class="vppl-hero-overlay"></div>
+            <div class="container position-relative" style="z-index: 10;">
+                <div class="vppl-hero-content">
+                    <ul class="vppl-breadcrumb">
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li class="active">Visual Gallery</li>
+                    </ul>
+                    <h1 class="vppl-hero-title">Our Projects <span class='vppl-gradient-text'>In Action</span></h1>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="gallery-section">
-                <div class="container">
-                    <div class="row g-4" id="vppl-gallery">
+        <section class="gallery-section">
+            <div class="container">
+                <div class="row g-4" id="vppl-gallery">
 
-                        <?php 
+                    <?php 
                        $images = [
                                 ['src' => asset('asset/images/about-img-1.webp'), 'title' => 'Industrial RO System'],
                                 ['src' => asset('asset/images/wat1.jpg'), 'title' => 'ETP Implementation'],
@@ -206,46 +203,49 @@
                                 ['src' => asset('asset/images/wat5.jpg'), 'title' => 'Process Water Recovery'],
                             ];
                         foreach ($images as $img): ?>
-                        <div class="col-lg-4 col-md-6">
-                            <a href="<?php echo $img['src']; ?>" data-pswp-width="1200" data-pswp-height="800"
-                                target="_blank" class="gallery-link">
-                                <div class="gallery-item gsap-reveal">
-                                    <img src="<?php echo $img['src']; ?>" class="gallery-image" alt="<?php echo $img['title']; ?>">
-                                    <div class="gallery-overlay">
-                                        <div class="view-btn">
-                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                stroke="white" stroke-width="2.5" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <line x1="12" y1="5" x2="12" y2="19"></line>
-                                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            </svg>
-                                        </div>
-                                        <div class="gallery-caption">
-                                            <h5 class="fw-bold mb-0"><?php echo $img['title']; ?></h5>
-                                            <small class="opacity-75">Project Infrastructure</small>
-                                        </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a href="<?php echo $img['src']; ?>" data-pswp-width="1200" data-pswp-height="800" target="_blank"
+                            class="gallery-link">
+                            <div class="gallery-item gsap-reveal">
+                                <img src="<?php echo $img['src']; ?>" class="gallery-image" alt="<?php echo $img['title']; ?>">
+                                <div class="gallery-overlay">
+                                    <div class="view-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery-caption">
+                                        <h5 class="fw-bold mb-0"><?php echo $img['title']; ?></h5>
+                                        <small class="opacity-75">Project Infrastructure</small>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                        <?php endforeach; ?>
-
+                            </div>
+                        </a>
                     </div>
+                    <?php endforeach; ?>
+
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
 
     </div>
 
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css" />
 
     <script type="module">
-        import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+        import PhotoSwipeLightbox from "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js";
+
         const lightbox = new PhotoSwipeLightbox({
             gallery: '#vppl-gallery',
-            children: '.gallery-link',
-            pswpModule: () => import(
-                'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js')
+            children: 'a.gallery-link',
+
+            pswpModule: () =>
+                import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js')
         });
+
         lightbox.init();
     </script>
 

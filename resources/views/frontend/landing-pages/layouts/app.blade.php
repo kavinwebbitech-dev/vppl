@@ -1108,15 +1108,15 @@
         }
 
         @media(min-width:768px) {
-            .lnd-pg-content-sec {
+            /* .lnd-pg-content-sec {
                 padding: 6rem 0;
-            }
+            } */
         }
 
         @media(min-width:1024px) {
-            .lnd-pg-content-sec {
+            /* .lnd-pg-content-sec {
                 padding: 8rem 0;
-            }
+            } */
         }
 
         .lnd-pg-bg-deco {
@@ -1140,7 +1140,7 @@
 
         @media(min-width:768px) {
             .lnd-pg-bg-deco {
-                top: 8rem;
+                top: 45rem;
                 left: -7rem;
                 width: 26rem;
                 height: 26rem;
@@ -2255,6 +2255,10 @@
             width: 20px;
             height: 20px;
             color: red;
+        }
+
+        .lnd-pg-hero-content p{
+            color: var(--c-light);
         }
     </style>
 </head>

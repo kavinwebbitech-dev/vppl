@@ -42,7 +42,7 @@ Route::get('/gallery', function () {
 })->name('gallery');
 
 Route::get('/hero', function () {
-    return view('frontend.hero');
+    return view('frontend.hero');   
 })->name('hero');
 
 Route::get('/hydro-pneumatic-system-pumps', function () {
@@ -85,6 +85,9 @@ Route::get('/careers', function () {
     return view('frontend.careers');
 })->name('careers');
 
+Route::get('/news-details', function () {
+    return view('frontend.news-details');
+})->name('news-details');
 
 
 //landing//

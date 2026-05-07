@@ -259,7 +259,7 @@
                                         precipitating iron into solid particles for easy mechanical filtration.</p>
                                 </div>
                                 <div class="col-lg-6">
-                                    <img src="images/iron-removal-plant.webp" class="img-fluid rounded-20px shadow-lg"
+                                    <img src="{{ asset('asset/images/iron-removal-plant.webp') }}" class="img-fluid rounded-20px shadow-lg"
                                         alt="Industrial Iron Removal">
                                 </div>
                             </div>

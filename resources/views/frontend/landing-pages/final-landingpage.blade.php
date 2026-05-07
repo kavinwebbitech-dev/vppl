@@ -31,7 +31,7 @@
                     </nav>
 
                     <div style="display:flex;align-items:center;gap:1rem;z-index:50;">
-                        <a href="#lnd-pg-form" class="lnd-pg-btn-cta">
+                        <a href="{{ route('contact') }}" class="lnd-pg-btn-cta">
                             <span>Get a Quote <i data-lucide="arrow-right"></i></span>
                         </a>
                         <button class="lnd-pg-mob-toggle" id="lnd-pg-mob-btn" aria-label="Open Menu">
@@ -54,7 +54,7 @@
                 <a href="#lnd-pg-faq" class="lnd-pg-mob-link">FAQ <i data-lucide="chevron-right"></i></a>
             </nav>
             <div class="lnd-pg-mob-cta-wrap">
-                <a href="#lnd-pg-form" class="lnd-pg-btn-mob-cta" id="lnd-pg-mob-cta">
+                <a href="{{ route('contact') }}" class="lnd-pg-btn-mob-cta" id="lnd-pg-mob-cta">
                     <span>Get a Free Quote <i data-lucide="arrow-right"></i></span>
                 </a>
             </div>
@@ -427,7 +427,7 @@
                         <!-- Brand -->
                         <div class="col-lg-4 col-md-12">
                             <div class="lnd-pg-ft-brand">
-                                <a href="index.php">
+                                <a href="{{ route('home') }}" class="lnd-pg-ft-logo-link">
                                     <img src="{{ asset('asset/images/vppl.svg') }}" class="lnd-pg-ft-logo"
                                         alt="VPPL Logo" onerror="this.src='';this.alt='VPPL'">
                                 </a>
@@ -454,11 +454,11 @@
                                     <div class="lnd-pg-ft-widget">
                                         <h5 class="lnd-pg-ft-widget-title">Company</h5>
                                         <ul class="lnd-pg-ft-link-list">
-                                            <li><a href="index.php">Home</a></li>
-                                            <li><a href="about.php">About Us</a></li>
-                                            <li><a href="career.php">Career</a></li>
-                                            <li><a href="news-event.php">News &amp; Events</a></li>
-                                            <li><a href="gallery.php">Gallery</a></li>
+                                            <li><a href="{{ route('home') }}">Home</a></li>
+                                            <li><a href="{{ route('about') }}">About Us</a></li>
+                                            <li><a href="{{ route('careers') }}">Career</a></li>
+                                            <li><a href="{{ route('news-event') }}">News &amp; Events</a></li>
+                                            <li><a href="{{ route('gallery') }}">Gallery</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -466,11 +466,11 @@
                                     <div class="lnd-pg-ft-widget">
                                         <h5 class="lnd-pg-ft-widget-title">Solutions</h5>
                                         <ul class="lnd-pg-ft-link-list">
-                                            <li><a href="#">RO Plant</a></li>
-                                            <li><a href="#">Water Softening</a></li>
-                                            <li><a href="#">Ultra Filtration</a></li>
-                                            <li><a href="#">Iron Removal</a></li>
-                                            <li><a href="#">DM Plant</a></li>
+                                            <li><a href="{{ route('mineral-water-treatment-plant') }}">RO Plant</a></li>
+                                            <li><a href="{{ route('water-softening-plant') }}">Water Softening</a></li>
+                                            <li><a href="{{ route('ultra-filtration-plant') }}">Ultra Filtration</a></li>
+                                            <li><a href="{{ route('iron-removal-plant') }}">Iron Removal</a></li>
+                                            <li><a href="{{ route('demineralization-plant') }}">DM Plant</a></li>
                                         </ul>
                                     </div>
                                 </div>

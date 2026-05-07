@@ -43,7 +43,6 @@ if (!function_exists('storeNotification')) {
         $typeUrls = [
             'enquiry' => route('enquiry.index'),
             'service' => route('service.index'),
-            'blog'    => route('blog.index'),
             'landing' => route('pages.index'),
             'sitemap' => route('sitemap.sitemap-robots.index'),
             'robot'   => route('sitemap.sitemap-robots.index'),

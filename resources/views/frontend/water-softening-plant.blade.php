@@ -259,7 +259,7 @@
                                         industry.</p>
                                 </div>
                                 <div class="col-lg-5">
-                                    <img src="images/water-softening-plant.webp" class="img-fluid serv-img"
+                                    <img src="{{ asset('asset/images/water-softening-plant.webp') }}" class="img-fluid serv-img"
                                         alt="Softener Plant">
                                 </div>
                             </div>

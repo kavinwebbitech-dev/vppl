@@ -100,7 +100,7 @@
         .service-nav-card {
             background: var(--vppl-light-bg);
             border-radius: 20px;
-            padding: 20px;
+            padding: 15px;
             border: 1px solid #eef2f6;
             position: sticky;
             top: 120px;

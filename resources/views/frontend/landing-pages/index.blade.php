@@ -18,6 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+   
     <style>
         *,
         *::before,
@@ -27,6 +28,16 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        .success-box {
+            padding: 12px 15px;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: 500;
         }
 
         body {
@@ -70,7 +81,7 @@
 
         .lnd-pg-wrap a {
             text-decoration: none;
-            color: inherit;
+            color: black;
         }
 
         .lnd-pg-wrap ul {
@@ -86,11 +97,17 @@
         }
 
         .lnd-pg-wrap button {
+            color: black;
             cursor: pointer;
             border: none;
             outline: none;
             background: none;
             font-family: inherit;
+        }
+
+
+        .lnd-pg-wrap button:hover {
+            color: var(--c-white);
         }
 
         /* Container */
@@ -127,8 +144,8 @@
         }
 
         /* =====================================================
-       1. HEADER
-       ===================================================== */
+                                                                   1. HEADER
+                                                                   ===================================================== */
         .lnd-pg-header {
             position: fixed;
             width: 100%;
@@ -396,8 +413,8 @@
         }
 
         /* =====================================================
-       2. HERO
-       ===================================================== */
+                                                                   2. HERO
+                                                                   ===================================================== */
         .lnd-pg-hero {
             position: relative;
             padding: 7rem 0 9rem;
@@ -1068,8 +1085,8 @@
         }
 
         /* =====================================================
-       3. CONTENT SECTION
-       ===================================================== */
+                                                                   3. CONTENT SECTION
+                                                                   ===================================================== */
         .lnd-pg-content-sec {
             position: relative;
             z-index: 10;
@@ -1078,15 +1095,15 @@
         }
 
         @media(min-width:768px) {
-            .lnd-pg-content-sec {
+            /* .lnd-pg-content-sec {
                 padding: 6rem 0;
-            }
+            } */
         }
 
         @media(min-width:1024px) {
-            .lnd-pg-content-sec {
+            /* .lnd-pg-content-sec {
                 padding: 8rem 0;
-            }
+            } */
         }
 
         .lnd-pg-bg-deco {
@@ -1576,8 +1593,8 @@
         }
 
         /* =====================================================
-       4. FAQ SECTION
-       ===================================================== */
+                                                                   4. FAQ SECTION
+                                                                   ===================================================== */
         .lnd-pg-faq-sec {
             padding: 4rem 0 6rem;
             border-top: 1px solid var(--c-grey);
@@ -1824,8 +1841,8 @@
         }
 
         /* =====================================================
-       5. FOOTER  ← FIXED: no animation gap, proper spacing
-       ===================================================== */
+                                                                   5. FOOTER  ← FIXED: no animation gap, proper spacing
+                                                                   ===================================================== */
         .lnd-pg-footer {
             position: relative;
             /* No top margin/gap — flush against FAQ */
@@ -2073,8 +2090,8 @@
         }
 
         /* =====================================================
-       6. FLOATING ELEMENTS & UTILITIES
-       ===================================================== */
+                                                                   6. FLOATING ELEMENTS & UTILITIES
+                                                                   ===================================================== */
         .lnd-pg-wa-btn {
             position: fixed;
             bottom: 1.5rem;
@@ -2174,6 +2191,58 @@
                 opacity: 0;
             }
         }
+
+        /* General Field Styling to match your image */
+        .vppl-field {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 15px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            /* Soft shadow */
+        }
+
+        .vppl-field:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Specific styling for the Math Question box */
+        .math-box {
+            width: 110px;
+            background-color: #ffffff !important;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: default;
+        }
+
+        /* Minimalist Refresh Button */
+        .btn-refresh {
+            background: transparent;
+            border: none;
+            color: red;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-refresh:hover {
+            transform: rotate(45deg);
+            color: #ef4444;
+            /* Red color on hover to match your 'danger' theme */
+        }
+
+        /* Icon size adjustment */
+        [data-lucide="refresh-cw"] {
+            width: 20px;
+            height: 20px;
+            color: red;
+        }
     </style>
 </head>
 
@@ -2190,7 +2259,7 @@
                 <div class="lnd-pg-header-inner">
 
                     <div class="lnd-pg-logo">
-                        <img src="images/vppl.svg" alt="VPPL" onerror="this.style.display='none'">
+                        <img src="{{ asset('asset/images/vppl.svg') }}" alt="VPPL" onerror="this.style.display='none'">
                         <span class="lnd-pg-logo-name">VPPL</span>
                     </div>
 
@@ -2201,7 +2270,7 @@
                     </nav>
 
                     <div style="display:flex;align-items:center;gap:1rem;z-index:50;">
-                        <a href="#lnd-pg-form" class="lnd-pg-btn-cta">
+                        <a href="{{ route('contact') }}" class="lnd-pg-btn-cta">
                             <span>Get a Quote <i data-lucide="arrow-right"></i></span>
                         </a>
                         <button class="lnd-pg-mob-toggle" id="lnd-pg-mob-btn" aria-label="Open Menu">
@@ -2224,7 +2293,7 @@
                 <a href="#lnd-pg-faq" class="lnd-pg-mob-link">FAQ <i data-lucide="chevron-right"></i></a>
             </nav>
             <div class="lnd-pg-mob-cta-wrap">
-                <a href="#lnd-pg-form" class="lnd-pg-btn-mob-cta" id="lnd-pg-mob-cta">
+                <a href="{{ route('contact') }}" class="lnd-pg-btn-mob-cta" id="lnd-pg-mob-cta">
                     <span>Get a Free Quote <i data-lucide="arrow-right"></i></span>
                 </a>
             </div>
@@ -2280,6 +2349,16 @@
                                             <input type="text" class="lnd-pg-input" placeholder="John Doe" required>
                                         </div>
                                     </div>
+
+                                    <div class="lnd-pg-field">
+                                        <label class="lnd-pg-label">Email Address</label>
+                                        <div class="lnd-pg-input-wrap">
+                                            <div class="lnd-pg-input-ico"><i data-lucide="mail"></i></div>
+                                            <input type="email" class="lnd-pg-input" placeholder="john.doe@example.com" required>
+                                        </div>
+                                    </div>
+
+
                                     <div class="lnd-pg-field">
                                         <label class="lnd-pg-label">Phone Number</label>
                                         <div class="lnd-pg-input-wrap">
@@ -2521,8 +2600,8 @@
                         <!-- Brand -->
                         <div class="col-lg-4 col-md-12">
                             <div class="lnd-pg-ft-brand">
-                                <a href="index.php">
-                                    <img src="images/vppl.svg" class="lnd-pg-ft-logo" alt="VPPL Logo"
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('asset/images/vppl.svg') }}" class="lnd-pg-ft-logo" alt="VPPL Logo"
                                         onerror="this.src='';this.alt='VPPL'">
                                 </a>
                                 <p class="lnd-pg-ft-desc">
@@ -2545,11 +2624,11 @@
                                     <div class="lnd-pg-ft-widget">
                                         <h5 class="lnd-pg-ft-widget-title">Company</h5>
                                         <ul class="lnd-pg-ft-link-list">
-                                            <li><a href="index.php">Home</a></li>
-                                            <li><a href="about.php">About Us</a></li>
-                                            <li><a href="career.php">Career</a></li>
-                                            <li><a href="news-event.php">News &amp; Events</a></li>
-                                            <li><a href="gallery.php">Gallery</a></li>
+                                            <li><a href="{{ route('home') }}">Home</a></li>
+                                            <li><a href="{{ route('about') }}">About Us</a></li>
+                                            <li><a href="{{ route('careers') }}">Career</a></li>
+                                            <li><a href="{{ route('news-event') }}">News &amp; Events</a></li>
+                                            <li><a href="{{ route('gallery') }}">Gallery</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -2557,11 +2636,11 @@
                                     <div class="lnd-pg-ft-widget">
                                         <h5 class="lnd-pg-ft-widget-title">Solutions</h5>
                                         <ul class="lnd-pg-ft-link-list">
-                                            <li><a href="#">RO Plant</a></li>
-                                            <li><a href="#">Water Softening</a></li>
-                                            <li><a href="#">Ultra Filtration</a></li>
-                                            <li><a href="#">Iron Removal</a></li>
-                                            <li><a href="#">DM Plant</a></li>
+                                            <li><a href="{{ route('mineral-water-treatment-plant') }}">RO Plant</a></li>
+                                            <li><a href="{{ route('water-softening-plant') }}">Water Softening</a></li>
+                                            <li><a href="{{ route('ultra-filtration-plant') }}">Ultra Filtration</a></li>
+                                            <li><a href="{{ route('iron-removal-plant') }}">Iron Removal</a></li>
+                                            <li><a href="{{ route('demineralization-plant') }}">DM Plant</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -2629,10 +2708,10 @@
         </main>
 
         <!-- WhatsApp FAB -->
-        <a href="https://wa.me/919843514600" target="_blank" rel="noopener noreferrer"
-            class="lnd-pg-wa-btn" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/919843514600" target="_blank" rel="noopener noreferrer" class="lnd-pg-wa-btn"
+            aria-label="Chat on WhatsApp">
             <div class="lnd-pg-wa-ping"></div>
-            <i data-lucide="message-circle"></i>
+            <i class="fab fa-whatsapp fs-2"></i>
         </a>
 
     </div><!-- /.lnd-pg-wrap -->
