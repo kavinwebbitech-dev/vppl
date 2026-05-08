@@ -106,44 +106,99 @@ class HomeController extends Controller
             1
         );
 
-        $to = "kavinwebbitech@gmail.com";
+       try {
 
+        $to = "venkadavanprojectschennai@gmail.com";
+    
+        // Admin Mail
         Mail::send([], [], function ($message) use ($request, $filePath, $resumeName, $to) {
 
-            $message->to($to)
-                ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
-                ->replyTo($request->email, $request->name)
-                ->subject('New Job Application')
-                ->text(
-                    "New Job Application\n\n" .
-                        "Name: {$request->name}\n" .
-                        "Email: {$request->email}\n" .
-                        "Phone: {$request->phone}\n" .
-                        "Subject: {$request->subject}\n" .
-                        "Message: {$request->message}\n"
-                );
+        $message->to($to)
+            ->from('venkadavanprojectschennai@gmail.com', 'VPPL')
+            ->replyTo('venkadavanprojectschennai@gmail.com', 'VPPL')
+            ->subject('New Job Application - ' . $request->name)
 
-            // Attach Resume
-            if ($filePath && file_exists($filePath)) {
-                $message->attach($filePath, [
-                    'as' => $resumeName,
-                ]);
-            }
-        });
+            ->html("
+                <h2>New Job Application</h2>
 
-        Mail::send([], [], function ($message) use ($request) {
+                <table cellpadding='6' cellspacing='0' border='0' width='100%'>
 
-            $message->to($request->email)
-                ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
-                ->subject('Thank You for Your Enquiry')
-                ->html("
-                <p>Hi {$request->name},</p>
-                <p>Thank you for your application. We have received your submission and our team will review it and get back to you soon.</p>
-                <br>
-                <p><strong>Your Message:</strong></p>
-                <p>{$request->message}</p>
+                    <tr>
+                        <td><strong>Name:</strong></td>
+                        <td>{$request->name}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>{$request->email}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Phone:</strong></td>
+                        <td>{$request->phone}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Subject:</strong></td>
+                        <td>{$request->subject}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Message:</strong></td>
+                        <td>{$request->message}</td>
+                    </tr>
+
+                </table>
             ");
-        });
+
+        // Attach Resume
+        if ($filePath && file_exists($filePath)) {
+
+            $message->attach($filePath, [
+                'as' => $resumeName,
+            ]);
+        }
+    });
+
+
+    // User Mail
+    Mail::send([], [], function ($message) use ($request) {
+
+        $message->to($request->email)
+            ->from('venkadavanprojectschennai@gmail.com', 'VPPL')
+            ->replyTo('venkadavanprojectschennai@gmail.com', 'VPPL')
+            ->subject('Thank You for Your Application')
+
+            ->html("
+                <p>Hi {$request->name},</p>
+
+                <p>
+                    Thank you for your application.
+                    We have received your submission successfully.
+                    Our HR team will review it and get back to you soon.
+                </p>
+
+                <br>
+
+                <p><strong>Your Message:</strong></p>
+
+                <p>{$request->message}</p>
+
+                <br>
+
+                <p>Regards,<br>VPPL Team</p>
+            ");
+    });
+
+        } catch (\Throwable $e) {
+        
+            \Log::error('Mail Error : ' . $e->getMessage());
+        
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
 
 
         return response()->json([
@@ -218,42 +273,94 @@ class HomeController extends Controller
             1
         );
 
-        try {
+       try {
+
             $to = "venkadavanprojectschennai@gmail.com";
-
+        
+            // Admin Mail
             Mail::send([], [], function ($message) use ($validated, $request, $to) {
-
+        
                 $message->to($to)
-                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
-                    ->replyTo($validated['email'], $validated['name'])
-                    ->subject('New Enquiry Received')
+                    ->from('venkadavanprojectschennai@gmail.com', 'VPPL')
+                    ->replyTo('venkadavanprojectschennai@gmail.com', 'VPPL')
+                    ->subject('New Enquiry Received - ' . $validated['name'])
+        
                     ->html("
-                    <h2>New Enquiry</h2>
-                    <p><strong>Name:</strong> {$validated['name']}</p>
-                    <p><strong>Email:</strong> {$validated['email']}</p>
-                    <p><strong>Phone:</strong> {$validated['phone']}</p>
-                    <p><strong>Message:</strong> {$validated['message']}</p>
-                    <p><strong>Type:</strong> {$request->type}</p>
-                ");
+                        <h2>New Enquiry Received</h2>
+        
+                        <table cellpadding='6' cellspacing='0' border='0' width='100%'>
+        
+                            <tr>
+                                <td><strong>Name:</strong></td>
+                                <td>{$validated['name']}</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>Email:</strong></td>
+                                <td>{$validated['email']}</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>Phone:</strong></td>
+                                <td>{$validated['phone']}</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>Type:</strong></td>
+                                <td>{$request->type}</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>Message:</strong></td>
+                                <td>{$validated['message']}</td>
+                            </tr>
+        
+                        </table>
+                    ");
             });
-
+        
+        
+            // User Mail
             Mail::send([], [], function ($message) use ($validated) {
-
+        
                 $message->to($validated['email'])
-                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
-                    ->subject('Thank You for Your Enquiry')
+                    ->from('venkadavanprojectschennai@gmail.com', 'VPPL')
+                    ->replyTo('venkadavanprojectschennai@gmail.com', 'VPPL')
+                    ->subject('Thank You For Contacting VPPL')
+        
                     ->html("
-                    <p>Hi {$validated['name']},</p>
-                    <p>Thank you for contacting us. We have received your enquiry and will get back to you soon.</p>
-                    <br>
-                    <p><strong>Your Message:</strong></p>
-                    <p>{$validated['message']}</p>
-                ");
+                        <h2>Thank You for Your Enquiry</h2>
+        
+                        <p>Hi {$validated['name']},</p>
+        
+                        <p>
+                            Thank you for contacting VPPL.
+                            We have received your enquiry successfully.
+                            Our team will get back to you shortly.
+                        </p>
+        
+                        <br>
+        
+                        <p><strong>Your Message:</strong></p>
+        
+                        <p>{$validated['message']}</p>
+        
+                        <br>
+        
+                        <p>Regards,<br>VPPL Team</p>
+                    ");
             });
+        
         } catch (\Throwable $e) {
-            Log::error('Mail Error: ' . $e->getMessage());
+        
+            \Log::error('Mail Error : ' . $e->getMessage());
+        
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage()
+            ]);
         }
-
+        
         return response()->json([
             'status' => true,
             'message' => 'Your enquiry has been submitted successfully!'
@@ -297,38 +404,84 @@ class HomeController extends Controller
         );
 
         try {
-            $to = "venkadavanprojectschennai@gmail.com";
 
-            Mail::send([], [], function ($message) use ($validated, $request, $to) {
+        $to = "venkadavanprojectschennai@gmail.com";
+    
+        // Admin Mail
+        Mail::send([], [], function ($message) use ($validated, $request, $to) {
 
-                $message->to($to)
-                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
-                    ->replyTo($validated['email'], $validated['name'])
-                    ->subject('New Enquiry Received')
-                    ->html("
-                    <h2>New Enquiry</h2>
-                    <p><strong>Name:</strong> {$validated['name']}</p>
-                    <p><strong>Email:</strong> {$validated['email']}</p>
-                    <p><strong>Phone:</strong> {$validated['phone']}</p>
-                    <p><strong>Service:</strong> {$validated['service']}</p>
-                    <p><strong>Type:</strong> {$request->type}</p>
-                ");
-            });
+        $message->to($to)
+            ->from('venkadavanprojectschennai@gmail.com', 'VPPL')
+            ->replyTo('venkadavanprojectschennai@vppl.net', 'VPPL')
+            ->subject('New Enquiry Received - ' . $validated['name'])
 
-            Mail::send([], [], function ($message) use ($validated) {
+            ->html("
+                <h2>New Enquiry Received</h2>
 
-                $message->to($validated['email'])
-                    ->from('venkadavanprojectschennai@gmail.com', 'Vppl')
-                    ->subject('Thank You for Your Enquiry')
-                    ->html("
+                <table cellpadding='6' cellspacing='0' border='0' width='100%'>
+
+                    <tr>
+                        <td><strong>Name:</strong></td>
+                        <td>{$validated['name']}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>{$validated['email']}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Phone:</strong></td>
+                        <td>{$validated['phone']}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Service:</strong></td>
+                        <td>{$validated['service']}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>{$request->type}</td>
+                    </tr>
+
+                </table>
+            ");
+    });
+
+
+    // User Mail
+        Mail::send([], [], function ($message) use ($validated) {
+    
+            $message->to($validated['email'])
+                ->from('venkadavanprojectschennai@gmail.com', 'VPPL')
+                ->replyTo('venkadavanprojectschennai@gmail.com', 'VPPL')
+                ->subject('Thank You for Your Enquiry')
+    
+                ->html("
                     <p>Hi {$validated['name']},</p>
-                    <p>Thank you for contacting us. We have received your enquiry and will get back to you soon.</p>
+    
+                    <p>
+                        Thank you for contacting us.
+                        We have received your enquiry and
+                        our team will get back to you soon.
+                    </p>
+    
                     <br>
-                    <p><strong>Your Message:</strong></p>
+    
+                    <p><strong>Selected Service:</strong></p>
+    
                     <p>{$validated['service']}</p>
+    
+                    <br>
+    
+                    <p>Regards,<br>VPPL Team</p>
                 ");
-            });
-        } catch (\Throwable $e) {
+        });
+    
+        }
+        
+        catch (\Throwable $e) {
             Log::error('Mail Error: ' . $e->getMessage());
         }
 
