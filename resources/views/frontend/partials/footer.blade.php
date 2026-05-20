@@ -49,7 +49,7 @@
                         <div class="vpp-ft-widget">
                             <h5 class="vpp-ft-widget-title">Projects</h5>
                             <ul class="vpp-ft-link-list">
-                                <li><a href="{{ route('mineral-water-treatment-plant') }}">Water Treatment</a></li>
+                                <li><a href="{{ route('service-single') }}">Water Treatment</a></li>
                                 <li><a href="{{ route('reverse-osmosis-plant') }}">RO Plant</a></li>
                                 <li><a href="{{ route('water-softening-plant') }}">Softening Plant</a></li>
                                 <li><a href="{{ route('ultra-filtration-plant') }}">Ultra Filtration</a></li>

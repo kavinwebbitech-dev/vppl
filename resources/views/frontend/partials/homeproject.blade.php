@@ -4,7 +4,7 @@
     <div class="aqua-container">
         <div class="aqua-header">
             <span class="aqua-badge">Excellence in Engineering</span>
-            <h1 class="aqua-main-title">Water Solutions</h1>
+            <h2 class="aqua-main-title">Water Solutions</h2>
             <p class="aqua-desc">Advanced engineering for high-purity water treatment and sustainable industrial
                 systems.</p>
         </div>

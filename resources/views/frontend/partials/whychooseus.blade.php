@@ -19,7 +19,7 @@
 
             <div class="aq-header text-center">
                 <span class="aq-label">Why Choose Us</span>
-                <h1 class="aq-title">Commitment to Excellence</h1>
+                <h2 class="aq-title">Commitment to Excellence</h2>
             </div>
 
             <div class="aq-list">

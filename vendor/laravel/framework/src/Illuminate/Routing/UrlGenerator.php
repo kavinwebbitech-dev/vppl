@@ -320,7 +320,7 @@ class UrlGenerator implements UrlGeneratorContract
      */
     protected function removeIndex($root)
     {
-        $i = 'index.php';
+        $i = 'index.php111';
 
         return str_contains($root, $i) ? str_replace('/'.$i, '', $root) : $root;
     }

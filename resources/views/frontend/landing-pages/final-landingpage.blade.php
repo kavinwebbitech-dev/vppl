@@ -5,7 +5,44 @@
 @section('meta_keyword', $page->meta_keyword ?? '')
 
 @section('content')
+    <style>
+        .vppl-has-dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        .vppl-dropdown-box {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 260px;
+            display: none;
+            padding: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .vppl-dropdown-box li {
+            list-style: none;
+        }
+
+        .vppl-dropdown-box li a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .vppl-dropdown-box li a:hover {
+            background: #f5f5f5;
+        }
+
+        .vppl-has-dropdown:hover .vppl-dropdown-box {
+            display: block;
+        }
+    </style>
     <div class="lnd-pg-wrap" id="lnd-pg-root">
 
         <!-- Scroll progress -->
@@ -25,9 +62,107 @@
                     </div>
 
                     <nav class="lnd-pg-nav-desktop">
+
                         <a href="#lnd-pg-home" class="lnd-pg-nav-link">Home</a>
-                        <a href="#lnd-pg-content" class="lnd-pg-nav-link">Services</a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('about') }}">
+                            About Us
+                        </a>
+
+                        <!-- Projects Dropdown -->
+                        <li class="vppl-has-dropdown" style="list-style: none; position: relative;">
+                            <a class="lnd-pg-nav-link" href="javascript:void(0);">
+                                Services
+                                <i class="fa fa-chevron-down ms-1 dropdown-icon"></i>
+                            </a>
+
+                            <ul class="vppl-dropdown-box">
+                                <li>
+                                    <a href="{{ route('service-single') }}">
+                                        Water Treatment Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('sewage-treatment-plant') }}">
+                                        Sewage Treatment Plant (STP)
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('effluent-treatment-plant') }}">
+                                        Effluent Treatment Plant (ETP)
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('reverse-osmosis-plant') }}">
+                                        Reverse Osmosis Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('water-softening-plant') }}">
+                                        Water Softening Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('ultra-filtration-plant') }}">
+                                        Ultra Filtration Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('iron-removal-plant') }}">
+                                        Iron Removal Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('mineral-water-treatment-plant') }}">
+                                        Mineral Water Treatment
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('demineralization-plant') }}">
+                                        Demineralization Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('hydro-pneumatic-system-pumps') }}">
+                                        Hydro Pneumatic Pumps
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('core-products') }}">
+                                        Core Products
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <a href="#lnd-pg-faq" class="lnd-pg-nav-link">FAQ</a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('news-event') }}">
+                            News & Events
+                        </a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('gallery') }}">
+                            Gallery
+                        </a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('careers') }}">
+                            Career
+                        </a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('contact') }}">
+                            Contact
+                        </a>
+
                     </nav>
 
                     <div style="display:flex;align-items:center;gap:1rem;z-index:50;">
@@ -320,11 +455,12 @@
                                         Our Solutions
                                     </h4>
                                     <nav class="lnd-pg-sidebar-nav">
-                                        <a href="{{ route('sewage-treatment-plant') }}" class="lnd-pg-sidebar-link lnd-pg-active">
-                                          <i data-lucide="check-circle-2"></i> Sewage Treatment Plant (STP)
+                                        <a href="{{ route('sewage-treatment-plant') }}"
+                                            class="lnd-pg-sidebar-link lnd-pg-active">
+                                            <i data-lucide="check-circle-2"></i> Sewage Treatment Plant (STP)
                                         </a>
                                         <a href="{{ route('reverse-osmosis-plant') }}" class="lnd-pg-sidebar-link ">
-                                              <i data-lucide="chevron-right"></i>  Reverse Osmosis System
+                                            <i data-lucide="chevron-right"></i> Reverse Osmosis System
                                         </a>
                                         <a href="{{ route('effluent-treatment-plant') }}" class="lnd-pg-sidebar-link">
                                             <i data-lucide="chevron-right"></i> Effluent Treatment Plant (ETP)

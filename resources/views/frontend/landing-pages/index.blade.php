@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Best Reverse Osmosis System Coimbatore | VPPL</title>
-    <meta name="description" content="Discover the Top-rated Reverse Osmosis System Coimbatore by VPPL. Ensure efficiency and reliability for your water treatment needs.">
-
+    <meta name="description"
+        content="Discover the Top-rated Reverse Osmosis System Coimbatore by VPPL. Ensure efficiency and reliability for your water treatment needs.">
+    <link rel="icon" href="{{ asset('asset/images/fav-icon.png') }}" type="image/gif" sizes="16x16">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-   
+
     <style>
         *,
         *::before,
@@ -2244,6 +2249,44 @@
             color: red;
         }
     </style>
+    <style>
+        .vppl-has-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .vppl-dropdown-box {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 260px;
+            display: none;
+            padding: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .vppl-dropdown-box li {
+            list-style: none;
+        }
+
+        .vppl-dropdown-box li a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .vppl-dropdown-box li a:hover {
+            background: #f5f5f5;
+        }
+
+        .vppl-has-dropdown:hover .vppl-dropdown-box {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -2259,14 +2302,113 @@
                 <div class="lnd-pg-header-inner">
 
                     <div class="lnd-pg-logo">
-                        <img src="{{ asset('asset/images/vppl.svg') }}" alt="VPPL" onerror="this.style.display='none'">
+                        <img src="{{ asset('asset/images/vppl.svg') }}" alt="VPPL"
+                            onerror="this.style.display='none'">
                         <span class="lnd-pg-logo-name">VPPL</span>
                     </div>
 
                     <nav class="lnd-pg-nav-desktop">
+
                         <a href="#lnd-pg-home" class="lnd-pg-nav-link">Home</a>
-                        <a href="#lnd-pg-content" class="lnd-pg-nav-link">Services</a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('about') }}">
+                            About Us
+                        </a>
+
+                        <!-- Projects Dropdown -->
+                        <li class="vppl-has-dropdown" style="list-style: none; position: relative;">
+                            <a class="lnd-pg-nav-link" href="javascript:void(0);">
+                                Services
+                                <i class="fa fa-chevron-down ms-1 dropdown-icon"></i>
+                            </a>
+
+                            <ul class="vppl-dropdown-box">
+                                <li>
+                                    <a href="{{ route('service-single') }}">
+                                        Water Treatment Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('sewage-treatment-plant') }}">
+                                        Sewage Treatment Plant (STP)
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('effluent-treatment-plant') }}">
+                                        Effluent Treatment Plant (ETP)
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('reverse-osmosis-plant') }}">
+                                        Reverse Osmosis Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('water-softening-plant') }}">
+                                        Water Softening Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('ultra-filtration-plant') }}">
+                                        Ultra Filtration Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('iron-removal-plant') }}">
+                                        Iron Removal Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('mineral-water-treatment-plant') }}">
+                                        Mineral Water Treatment
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('demineralization-plant') }}">
+                                        Demineralization Plant
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('hydro-pneumatic-system-pumps') }}">
+                                        Hydro Pneumatic Pumps
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('core-products') }}">
+                                        Core Products
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <a href="#lnd-pg-faq" class="lnd-pg-nav-link">FAQ</a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('news-event') }}">
+                            News & Events
+                        </a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('gallery') }}">
+                            Gallery
+                        </a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('careers') }}">
+                            Career
+                        </a>
+
+                        <a class="lnd-pg-nav-link" href="{{ route('contact') }}">
+                            Contact
+                        </a>
+
                     </nav>
 
                     <div style="display:flex;align-items:center;gap:1rem;z-index:50;">
@@ -2287,10 +2429,108 @@
             <button class="lnd-pg-mob-close" id="lnd-pg-mob-close" aria-label="Close Menu">
                 <i data-lucide="x"></i>
             </button>
-            <nav class="lnd-pg-mob-links">
-                <a href="#lnd-pg-home" class="lnd-pg-mob-link">Home <i data-lucide="chevron-right"></i></a>
-                <a href="#lnd-pg-content" class="lnd-pg-mob-link">Services<i data-lucide="chevron-right"></i></a>
-                <a href="#lnd-pg-faq" class="lnd-pg-mob-link">FAQ <i data-lucide="chevron-right"></i></a>
+            <nav class="lnd-pg-nav-desktop">
+
+                <a href="#lnd-pg-home" class="lnd-pg-nav-link">Home</a>
+
+                <a class="lnd-pg-nav-link" href="{{ route('about') }}">
+                    About Us
+                </a>
+
+                <!-- Projects Dropdown -->
+                <li class="vppl-has-dropdown" style="list-style: none; position: relative;">
+                    <a class="lnd-pg-nav-link" href="javascript:void(0);">
+                        Services
+                        <i class="fa fa-chevron-down ms-1 dropdown-icon"></i>
+                    </a>
+
+                    <ul class="vppl-dropdown-box">
+                        <li>
+                            <a href="{{ route('service-single') }}">
+                                Water Treatment Plant
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('sewage-treatment-plant') }}">
+                                Sewage Treatment Plant (STP)
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('effluent-treatment-plant') }}">
+                                Effluent Treatment Plant (ETP)
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('reverse-osmosis-plant') }}">
+                                Reverse Osmosis Plant
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('water-softening-plant') }}">
+                                Water Softening Plant
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('ultra-filtration-plant') }}">
+                                Ultra Filtration Plant
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('iron-removal-plant') }}">
+                                Iron Removal Plant
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('mineral-water-treatment-plant') }}">
+                                Mineral Water Treatment
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('demineralization-plant') }}">
+                                Demineralization Plant
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('hydro-pneumatic-system-pumps') }}">
+                                Hydro Pneumatic Pumps
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('core-products') }}">
+                                Core Products
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <a href="#lnd-pg-faq" class="lnd-pg-nav-link">FAQ</a>
+
+                <a class="lnd-pg-nav-link" href="{{ route('news-event') }}">
+                    News & Events
+                </a>
+
+                <a class="lnd-pg-nav-link" href="{{ route('gallery') }}">
+                    Gallery
+                </a>
+
+                <a class="lnd-pg-nav-link" href="{{ route('careers') }}">
+                    Career
+                </a>
+
+                <a class="lnd-pg-nav-link" href="{{ route('contact') }}">
+                    Contact
+                </a>
+
             </nav>
             <div class="lnd-pg-mob-cta-wrap">
                 <a href="{{ route('contact') }}" class="lnd-pg-btn-mob-cta" id="lnd-pg-mob-cta">
@@ -2322,7 +2562,8 @@
                                 <span class="lnd-pg-hl">Coimbatore</span>
                             </h1>
                             <p class="lnd-pg-hero-desc">
-                                VPPL provides the finest Reverse Osmosis System Coimbatore residents and businesses can rely on for top-quality water purification — installation, maintenance, and more.
+                                VPPL provides the finest Reverse Osmosis System Coimbatore residents and businesses can
+                                rely on for top-quality water purification — installation, maintenance, and more.
                             </p>
                             <div class="lnd-pg-trust-row">
                                 <div class="lnd-pg-trust-badge"><i data-lucide="shield-check"></i> ISO Certified</div>
@@ -2339,14 +2580,16 @@
                                     <div class="lnd-pg-form-ico"><i data-lucide="waves"></i></div>
                                     Get a Free Estimate
                                 </h3>
-                                <p class="lnd-pg-form-sub">Enter your details — our Coimbatore experts will contact you shortly.</p>
+                                <p class="lnd-pg-form-sub">Enter your details — our Coimbatore experts will contact you
+                                    shortly.</p>
 
                                 <form onsubmit="return false;">
                                     <div class="lnd-pg-field">
                                         <label class="lnd-pg-label">Full Name</label>
                                         <div class="lnd-pg-input-wrap">
                                             <div class="lnd-pg-input-ico"><i data-lucide="user"></i></div>
-                                            <input type="text" class="lnd-pg-input" placeholder="John Doe" required>
+                                            <input type="text" class="lnd-pg-input" placeholder="John Doe"
+                                                required>
                                         </div>
                                     </div>
 
@@ -2354,7 +2597,8 @@
                                         <label class="lnd-pg-label">Email Address</label>
                                         <div class="lnd-pg-input-wrap">
                                             <div class="lnd-pg-input-ico"><i data-lucide="mail"></i></div>
-                                            <input type="email" class="lnd-pg-input" placeholder="john.doe@example.com" required>
+                                            <input type="email" class="lnd-pg-input"
+                                                placeholder="john.doe@example.com" required>
                                         </div>
                                     </div>
 
@@ -2363,7 +2607,8 @@
                                         <label class="lnd-pg-label">Phone Number</label>
                                         <div class="lnd-pg-input-wrap">
                                             <div class="lnd-pg-input-ico"><i data-lucide="phone"></i></div>
-                                            <input type="tel" class="lnd-pg-input" placeholder="+91 98XXX XXXXX" required>
+                                            <input type="tel" class="lnd-pg-input" placeholder="+91 98XXX XXXXX"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="lnd-pg-field">
@@ -2420,7 +2665,10 @@
                             <div class="lnd-pg-reveal">
                                 <h2>Comprehensive Reverse Osmosis System Coimbatore Services</h2>
                                 <p>
-                                    At VPPL, we take pride in being a full-service provider of Reverse Osmosis System Coimbatore solutions. Our offerings include the design, installation, and maintenance of reverse osmosis systems tailored to meet the diverse needs of our clients.
+                                    At VPPL, we take pride in being a full-service provider of Reverse Osmosis System
+                                    Coimbatore solutions. Our offerings include the design, installation, and
+                                    maintenance of reverse osmosis systems tailored to meet the diverse needs of our
+                                    clients.
                                 </p>
                             </div>
 
@@ -2447,7 +2695,10 @@
                             <div class="lnd-pg-reveal lnd-pg-d100">
                                 <h3>Local Expertise in Reverse Osmosis Maintenance Coimbatore</h3>
                                 <p>
-                                    VPPL's expertise extends beyond installation — we provide ongoing support and maintenance. By utilizing our systems, businesses and households achieve long-term results with minimal hassle. Our local team ensures rapid response and trusted service every time.
+                                    VPPL's expertise extends beyond installation — we provide ongoing support and
+                                    maintenance. By utilizing our systems, businesses and households achieve long-term
+                                    results with minimal hassle. Our local team ensures rapid response and trusted
+                                    service every time.
                                 </p>
                             </div>
 
@@ -2537,7 +2788,9 @@
                             <div class="lnd-pg-faq-body">
                                 <div class="lnd-pg-faq-inner">
                                     <div class="lnd-pg-faq-text">
-                                        Using a Reverse Osmosis System in Coimbatore offers purified water, improved health, and efficient water treatment. VPPL ensures quality and reliable long-term performance with systems designed for the local water profile.
+                                        Using a Reverse Osmosis System in Coimbatore offers purified water, improved
+                                        health, and efficient water treatment. VPPL ensures quality and reliable
+                                        long-term performance with systems designed for the local water profile.
                                     </div>
                                 </div>
                             </div>
@@ -2551,7 +2804,9 @@
                             <div class="lnd-pg-faq-body">
                                 <div class="lnd-pg-faq-inner">
                                     <div class="lnd-pg-faq-text">
-                                        VPPL provides professional maintenance for RO systems in Coimbatore, ensuring long-term reliability through scheduled filter replacements, membrane cleaning, and proactive system health checks.
+                                        VPPL provides professional maintenance for RO systems in Coimbatore, ensuring
+                                        long-term reliability through scheduled filter replacements, membrane cleaning,
+                                        and proactive system health checks.
                                     </div>
                                 </div>
                             </div>
@@ -2565,7 +2820,9 @@
                             <div class="lnd-pg-faq-body">
                                 <div class="lnd-pg-faq-inner">
                                     <div class="lnd-pg-faq-text">
-                                        Yes — our commercial RO systems are engineered for high efficiency, helping local businesses maintain an uninterrupted supply of pure water, reducing operational costs over time.
+                                        Yes — our commercial RO systems are engineered for high efficiency, helping
+                                        local businesses maintain an uninterrupted supply of pure water, reducing
+                                        operational costs over time.
                                     </div>
                                 </div>
                             </div>
@@ -2579,7 +2836,9 @@
                             <div class="lnd-pg-faq-body">
                                 <div class="lnd-pg-faq-inner">
                                     <div class="lnd-pg-faq-text">
-                                        Absolutely! VPPL offers fully customizable reverse osmosis systems to meet any specific capacity, pressure, or space constraint for residential or commercial clients across Coimbatore.
+                                        Absolutely! VPPL offers fully customizable reverse osmosis systems to meet any
+                                        specific capacity, pressure, or space constraint for residential or commercial
+                                        clients across Coimbatore.
                                     </div>
                                 </div>
                             </div>
@@ -2601,18 +2860,24 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="lnd-pg-ft-brand">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ asset('asset/images/vppl.svg') }}" class="lnd-pg-ft-logo" alt="VPPL Logo"
-                                        onerror="this.src='';this.alt='VPPL'">
+                                    <img src="{{ asset('asset/images/vppl.svg') }}" class="lnd-pg-ft-logo"
+                                        alt="VPPL Logo" onerror="this.src='';this.alt='VPPL'">
                                 </a>
                                 <p class="lnd-pg-ft-desc">
-                                    Transform your water and wastewater systems with VPPL's expert treatment solutions. Reliable, efficient, and sustainable — tailored to your industry requirements.
+                                    Transform your water and wastewater systems with VPPL's expert treatment solutions.
+                                    Reliable, efficient, and sustainable — tailored to your industry requirements.
                                 </p>
                                 <div class="lnd-pg-ft-socials">
-                                    <a href="#" class="lnd-pg-ft-social"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#" class="lnd-pg-ft-social"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#" class="lnd-pg-ft-social"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" class="lnd-pg-ft-social"><i class="fa-brands fa-linkedin-in"></i></a>
-                                    <a href="#" class="lnd-pg-ft-social"><i class="fa-brands fa-whatsapp"></i></a>
+                                    <a href="#" class="lnd-pg-ft-social"><i
+                                            class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#" class="lnd-pg-ft-social"><i
+                                            class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" class="lnd-pg-ft-social"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" class="lnd-pg-ft-social"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#" class="lnd-pg-ft-social"><i
+                                            class="fa-brands fa-whatsapp"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -2636,9 +2901,12 @@
                                     <div class="lnd-pg-ft-widget">
                                         <h5 class="lnd-pg-ft-widget-title">Solutions</h5>
                                         <ul class="lnd-pg-ft-link-list">
-                                            <li><a href="{{ route('mineral-water-treatment-plant') }}">RO Plant</a></li>
-                                            <li><a href="{{ route('water-softening-plant') }}">Water Softening</a></li>
-                                            <li><a href="{{ route('ultra-filtration-plant') }}">Ultra Filtration</a></li>
+                                            <li><a href="{{ route('mineral-water-treatment-plant') }}">RO Plant</a>
+                                            </li>
+                                            <li><a href="{{ route('water-softening-plant') }}">Water Softening</a>
+                                            </li>
+                                            <li><a href="{{ route('ultra-filtration-plant') }}">Ultra Filtration</a>
+                                            </li>
                                             <li><a href="{{ route('iron-removal-plant') }}">Iron Removal</a></li>
                                             <li><a href="{{ route('demineralization-plant') }}">DM Plant</a></li>
                                         </ul>
@@ -2656,7 +2924,8 @@
                                     </div>
                                     <div>
                                         <div class="lnd-pg-ft-contact-label">Location</div>
-                                        <p class="lnd-pg-ft-contact-text">No.2, Flat 3, Saligramam,<br>Chennai – 600093.</p>
+                                        <p class="lnd-pg-ft-contact-text">No.2, Flat 3, Saligramam,<br>Chennai –
+                                            600093.</p>
                                     </div>
                                 </div>
 
@@ -2676,7 +2945,8 @@
                                     </div>
                                     <div>
                                         <div class="lnd-pg-ft-contact-label">Email Us</div>
-                                        <a href="mailto:support@vppl.com" class="lnd-pg-ft-contact-link">support@vppl.com</a>
+                                        <a href="mailto:support@vppl.com"
+                                            class="lnd-pg-ft-contact-link">support@vppl.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -2761,7 +3031,8 @@
         document.querySelectorAll('.lnd-pg-faq-item').forEach(item => {
             item.querySelector('.lnd-pg-faq-q').addEventListener('click', () => {
                 const wasOpen = item.classList.contains('lnd-pg-open');
-                document.querySelectorAll('.lnd-pg-faq-item').forEach(i => i.classList.remove('lnd-pg-open'));
+                document.querySelectorAll('.lnd-pg-faq-item').forEach(i => i.classList.remove(
+                    'lnd-pg-open'));
                 if (!wasOpen) item.classList.add('lnd-pg-open');
             });
         });
@@ -2787,7 +3058,8 @@
                 p.className = 'lnd-pg-particle';
                 const sz = Math.random() * 3 + 1;
                 const dur = Math.random() * 14 + 11;
-                p.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;bottom:-10px;animation:lnd-pg-float-slow ${dur}s linear forwards;`;
+                p.style.cssText =
+                    `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;bottom:-10px;animation:lnd-pg-float-slow ${dur}s linear forwards;`;
                 bubbleContainer.appendChild(p);
                 setTimeout(() => p.remove(), dur * 1000);
             }
@@ -2802,7 +3074,8 @@
                 const d = Math.max(rect.width, rect.height);
                 const span = document.createElement('span');
                 span.className = 'lnd-pg-ripple-dot';
-                span.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX-rect.left}px;top:${e.clientY-rect.top}px;transform:translate(-50%,-50%) scale(0);`;
+                span.style.cssText =
+                    `width:${d}px;height:${d}px;left:${e.clientX-rect.left}px;top:${e.clientY-rect.top}px;transform:translate(-50%,-50%) scale(0);`;
                 this.appendChild(span);
                 setTimeout(() => span.remove(), 620);
             });
